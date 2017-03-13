@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--Thymeleaf-->
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+  	<title>Reviews</title>
+  	<!--Meta-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Bootstrap Core CSS + Thymeleaf -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+    <!-- Custom CSS + Thymeleaf -->
+    <link href="myStyles.css" rel="stylesheet"/>
+    <link th:href="@{myStyles.css}" />
+  </head>
+    <body>
+    <div class="container">
+      <h1>Reviews</h1> 
+
+      <div class = "row" th:each="repository : ${repositories}" >
+        <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <img th:src="${repository.imgURL}" width="250px" height="250px" />
+   		    <p th:text="'#' + ${repository.id}"></p>
+          <a th:href="@{http://localhost:8080/showReview(id=${repository.id})}"><p th:text="${repository.title}"></p></a>   
+      </div>
+      </div>
+    </div>
+    <!-- Scripts -->  
+    <script src="http://code.jquery.com/jquery.js"></script>
+  	<script src="/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>
