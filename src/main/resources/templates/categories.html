@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Thymeleaf -->
-    <html xmlns:th="http://www.thymeleaf.org">
+    <html xmlns:th="http://www.thymeleaf.org"/>
     <title>Homepage</title>
     <!-- Bootstrap Core CSS + Thymeleaf -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -19,7 +19,7 @@
   <body>
     <h1>Homepage</h1>
     <h2>Categories of Reviews</h2>
-        <p th:each="category: ${categoriesAttribute}" th:text="${category.name}"/>
+        <p th:each="category: ${categoriesAttribute}"><a th:text="${category.name}" th:href="@{/showCategory(id=${category.id})}" /></p>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

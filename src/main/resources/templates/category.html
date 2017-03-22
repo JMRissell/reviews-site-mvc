@@ -6,25 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Thymeleaf -->
-    <html xmlns:th="http://www.thymeleaf.org">
+    <html xmlns:th="http://www.thymeleaf.org"/>
     <title>Homepage</title>
     <!-- Bootstrap Core CSS + Thymeleaf -->
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet" />
+    <!--<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>-->
+    <!--<link th:href="@{css/bootstrap.min.css}" rel="stylesheet" />-->
     <!-- Custom CSS + Thymelea -->
-    <link href="myStyles.css" rel="stylesheet"/>
-    <link th:href="@{myStyles.css}" />
+   <!--  <link href="myStyles.css" rel="stylesheet"/>
+    <link th:href="@{myStyles.css}" /> -->
   </head>
 
   <body>
-    <h1>Homepage</h1>
-    <h2>Categories of Reviews</h2>
-        <p th:each="category: ${categoriesAttribute}" th:text="${category.name}"/>
-
+    <h1 th:text="${categoryAttribute.name}" />
+    <p th:each="review: ${categoryAttribute.reviews}"><a th:text="${review.title}" th:href="@{/showReview(id=${review.id})}"/></p>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!--<script src="bootstrap/js/bootstrap.min.js"></script>-->
   </body>
 </html>

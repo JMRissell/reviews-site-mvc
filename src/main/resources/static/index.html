@@ -15,9 +15,13 @@
     <link href="myStyles.css" rel="stylesheet"/>
     <link th:href="@{myStyles.css}" />
   </head>
+
   <body>
     <h1>Homepage</h1>
-    <h2><a href="/showReviews">See a Full List of Reviews</a></h2>
+    <h2>Categories of Reviews</h2>
+        <p th:each="category: ${categoriesAttribute}" th:text="${category.name}"/>
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
